@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background: url(img/bg.jpg);
+			}
+			.box{
+				width: 980px;
+				height: 370px;
+				margin: 80px auto;
+				/*padding: 30px;*/
+				display:flex;
+			}
+			.box1{
+				flex: 1.4;
+				background: #f6f6f6;
+				padding-top: 25px;
+				padding-left: 30px;
+			}
+			.box2{
+				flex: 1;
+				background: #f9f9f9;
+				padding-top: 25px;
+				padding-left: 30px;
+				/*position: relative;*/
+			}
+			.box2 h3{
+				border-bottom: 1px solid grey;
+				padding-bottom: 5px;
+				width: 340px;
+			}
+			.box2 input:nth-child(-n+3){
+				width: 330px;
+				height: 40px;
+				margin-top: 20px;
+				padding-left: 10px;
+			}
+			.box2 input:nth-child(3){
+				cursor: pointer;
+				width: 100px;
+				height: 30px;
+				background: #79c62a;
+				color: white;
+				border-radius: 5px;
+				border: hidden;
+			}
+			.box2 input:nth-child(4){
+				margin-left: 100px;
+			}
+			.pic1{
+				float: left;
+				width: 140px;
+				height: 40px;
+				margin-top: 20px;
+				border: 1px solid grey;
+				border-radius: 5px;
+				background: url(img/head.png) -303px -122px no-repeat;
+			}
+			.pic2{
+				float: left;
+				width: 170px;
+				height: 40px;
+				margin-top: 20px;
+				margin-left: 20px;
+				border: 1px solid grey;
+				border-radius: 5px;
+				background: url(img/head.png) -464px -122px no-repeat;
+			}
+			.box2 a:nth-last-child(3){
+				display: inline-block;
+				text-decoration: none;
+				margin-left: 130px;
+				margin-top: 30px;
+				font-size: 12px;
+			}
+			.box2 a:nth-last-child(-n+2){
+				text-decoration: none;
+				font-size: 12px;
+			}
+			img:hover{
+				transition: all 1s linear;
+				transform: scale(1.2);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box1">
+				<p>发现更多精彩！</p>
+				<img src="img/upload/log1.jpg" style="width:195px;height:305px;float: left;margin-right: 5px;"/>
+				<img src="img/upload/log2.jpg" style="width:295px;height:150px;float: left;margin-bottom: 5px;"/>
+				<img src="img/upload/log3.jpg" style="width:145px;height:150px;float: left;margin-right: 5px;"/>
+				<img src="img/upload/log4.jpg" style="width:145px;height:150px;float: left;"//>
+			</div>
+			<div class="box2">
+				<h3>用户登录</h3>
+				<form action="" method="post">
+					<input type="text" name="" id="username" value="" placeholder="微博帐号/QQ号码/电子邮箱"/>
+					<input type="password" name="" id="pwd" value="" placeholder="密码"/>
+					
+				</form>
+				<input type="submit" value="登录" id="submit"/>
+				<input type="checkbox" name="" id="ckb" value="" /><span>下次自动登录</span>
+				<a href=""><div class="pic1"></div></a>
+				<a href=""><div class="pic2"></div></a>
+				<a href="">忘记密码? |</a>
+				<a href="">注册新账号 |</a>
+				<a href="">意见反馈</a>
+			</div>
+		</div>
+		
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			 $(function () {
+		           $("#username").val(window.localStorage.getItem("username"));
+		           $("#pwd").val(window.localStorage.getItem("pwd"));
+		           $("#submit").click(function () {
+		               if( $("#username").val()!=window.localStorage.getItem("username")){
+		                   alert("用户名不存在！请先注册");
+		               }else if($("#pwd").val()!=window.localStorage.getItem("pwd")){
+		                   alert("密码输入有误！请重新输入");
+		               }else{
+		                   if($("#ckb").is(":checked")){
+		                       alert("登录成功！跳转至首页...");
+		                       window.localStorage.setItem('username',$("#username").val());
+		                       window.localStorage.setItem('pwd',$("#pwd").val());
+		                       $(location).delay(1000).attr('href','index.html');
+		                   }else{
+		                       alert("登录成功！跳转至首页...");
+		                       $(location).delay(1000).attr('href','index.html');
+		
+		                   }
+		               }
+		
+		           })
+		        })
+
+		</script>
+	</body>
+</html>

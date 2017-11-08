@@ -1,0 +1,401 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	
+}
+a{
+	text-decoration: none;
+	/*color: white;*/
+}
+.clearfix:after{
+　　　　　　content:"";//设置内容为空
+　　　　　　height:0;//高度为0
+　　　　　　line-height:0;//行高为0
+　　　　　　display:block;//将文本转为块级元素
+　　　　　　visibility:hidden;//将元素隐藏
+　　　　　　clear:both//清除浮动
+　　　　　}
+.clearfix{
+　　　　　　zoom:1;
+　　　　}
+ul{
+	list-style: none;
+}
+header{
+	width: 100%;
+	height: 35px;
+	background: black;
+	color: white;
+	padding: 2px;
+}
+header ul{
+	margin-left: 230px;
+	/*margin-right: 535px;*/
+}
+header ul a{
+	color: white;
+}
+header ul li{
+	float: left;
+	width: 60px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+}
+header .fenge{
+	float: left;
+	margin-left: 535px;
+	/*line-height: 35px;
+	font-size: 14px;	*/
+}
+header .fenge a{
+	float: left;
+	color: white;
+	line-height: 35px;
+	font-size: 14px;
+	margin-right: 15px;	
+}
+header .fenge img{
+	float: left;
+	width: 30px;
+	margin: 5px 0 0 15px;
+	/*line-height: 35px;*/
+}
+
+nav{
+	width: 100%;
+	height: 62px;
+	background: url(../img/bg.jpg);
+	/*background-size: 100%;*/
+	color: #766076;
+	border-bottom: 1px solid #766076;
+	z-index: 5;
+}
+nav img{
+	float: left;
+	padding-left: 230px;	
+	height: 62px;
+}
+nav a{
+	margin-left:15px;
+	margin-right: 15px;
+	float: left;
+	color: #766076;
+	line-height: 62px;
+}
+nav input{
+	float: left;
+	margin: 20px auto;
+}
+.container{
+	background: url(../img/bg.jpg);
+	padding: 28px 200px 20px 200px;
+	width: 980px;
+	/*height: 1000px;*/
+	display: flex;
+}
+
+.container .boxleft{
+	flex: 2.8;
+}
+.box1{
+	width: 710px;
+	height: 355px;
+}
+
+.box2{
+	width: 710px;
+	/*height: 400px;*/
+	background: white;
+	margin-top:20px ;
+	padding: 10px;
+	
+	
+}
+.box2 img:hover{
+	transition: all 1s linear;
+	transform: scale(1.2);
+}
+.box2 .top{
+
+	border-bottom: 1px solid gray;
+	height: 40px;
+	width: 710px;
+	
+}
+.box2 .top span{
+	color: gray;
+	margin-left: 10px;
+	font-weight: bold;
+	line-height: 40px;
+}
+.box2 .top a{
+	float: right;
+	color: gray;
+	line-height: 40px;
+}
+.box2 .xia{
+	width: 690px;
+	height: 390px;
+	margin: 10px;
+	background: url(../img/bg.jpg);
+}
+
+.box2 .xia1{
+	float: left;
+	width: 226px;
+	height: 190px;
+	background: white;
+	margin: 2px;
+	overflow: hidden;
+	position: relative;
+
+}
+.box2 .xia .xia1 p{
+	width:226px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	position: absolute;
+	left:0px;
+	bottom:-30px;
+	color:white;
+	background: rgba(0,0,0,0.6);
+}
+.xia img{
+	cursor: pointer;
+	width: 208px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.container .boxright{
+	flex: 1;
+}
+
+.boxright .right{
+	width: 214px;
+	margin-left: 20px;
+	background: white;
+	color: gray;
+	text-align: center;
+}
+.right .top{
+	margin: 10px;
+	border-bottom: 1px solid gray;
+}
+.right .top p{
+	font-size: 20px;
+	padding-top: 5px;
+	margin-bottom:5px;
+}
+.right img,.right2{
+	width: 208px;
+}
+
+
+
+.right2,.right3{
+	width: 214px;
+	margin-top: 20px;
+	padding-bottom: 10px;
+	margin-left: 20px;
+	background: white;
+	color: gray;
+	/*text-align: center;*/
+}
+.right2 .top{
+	margin: 10px;
+	border-bottom: 1px solid gray;
+}
+.right2 .top p{
+	color: green;
+	font-size: 14px;
+	margin-bottom:5px;
+	padding-top: 5px;
+}
+.right2 .xia2{
+	margin: 10px;
+}
+.right2 .orange{
+	color: orange;
+	font-size: 20px;
+}
+.right2 .black{
+	color: black;
+	font-size: 14px;
+}
+.right2 .yuanliang{
+	color: green;
+	font-size: 18px;
+}
+
+.right2 .xia2 .shipin{
+	width: 200px;
+	margin-top: -5px;
+	border-radius: 10px;
+}
+
+.right2 ul,.right3 ul{
+	margin-bottom: 10px;
+}
+.right2 ul li,.right2 ul li{
+	width: 180px;
+	height: 25px;
+	margin: 0 auto;
+	border-bottom: 1px dashed grey;
+	font-size: 12px;
+	line-height: 25px;
+}
+.right2 ul .teshu{
+	display: flex;
+	width: 180px;
+	height: 80px;
+	border-bottom: 1px dashed grey;
+	font-size: 12px;
+	line-height: 25px;
+}
+.right2 ul li.teshu img{
+	flex: 1;
+	width: 100px;
+	height: 75px;
+}
+.right2 ul li.teshu span{
+	flex: 1;
+}
+.right3 ul .teshu1{
+	display: flex;
+	width: 180px;
+	height: 50px;
+	border-bottom: 1px dashed grey;
+	font-size: 12px;
+	line-height: 25px;
+	margin-top: 10px;
+}
+.right3 ul li.teshu1 img{
+	flex: 0.5;
+	padding-left: 10px;
+	margin-bottom: 5px;
+}
+.right3 ul li.teshu1 span{
+	flex: 3;
+	
+}
+.xiaobox1{
+	cursor: pointer;
+	width: 100px;
+	height: 70px;
+	float: left;
+	background: url(../img/sites.png) -224px 0 no-repeat;
+	border-right: 1px solid #eeeeee;
+}
+.xiaobox2{
+	cursor: pointer;
+	width: 110px;
+	height: 70px;
+	float: left;
+	background: url(../img/sites.png) -336px 0 no-repeat;
+}
+.xiaobox3{
+	cursor: pointer;
+	width: 100px;
+	height: 70px;
+	float: left;
+	background: url(../img/sites.png) -224px -70px no-repeat;
+	border-right: 1px solid #eeeeee;	
+}
+.xiaobox4{
+	cursor: pointer;
+	width: 110px;
+	height: 70px;
+	float: left;
+	background: url(../img/sites.png) -336px -70px no-repeat;
+}
+.xiaobox5{
+	cursor: pointer;
+	width: 100px;
+	height: 70px;
+	float: left;
+	background: url(../img/sites.png) -224px -140px no-repeat;
+	border-bottom: 1px solid #eeeeee;
+	border-right: 1px solid #eeeeee;
+}
+.xiaobox6{
+	cursor: pointer;
+	width: 110px;
+	height: 70px;
+	float: left;
+	background: url(../img/sites.png) -224px -210px no-repeat;
+	border-bottom: 1px solid #eeeeee;
+}
+.weixin{
+	display: none;
+	position: absolute;
+	left:7px;
+	top: 50px;
+}
+.weixin img{
+	width: 200px;
+}
+
+
+nav ul{
+    line-height: 10px;
+    /*margin-left:100px;*/
+    list-style: none;
+    display: none;
+    width:150px;
+    height:280px;
+    border: 1px solid gray;
+    padding-right: 20px;
+    /*margin-top:10px;*/
+    border-top: 0;
+    position: absolute;
+    right: 232px;
+    top:78px;
+    z-index: 5;
+    background: url("../img/bg.jpg");
+}
+nav ul li{
+	/*padding-left:2px;*/
+    line-height:20px;
+    font-size:12px;
+    display: block;
+}
+nav ul li a{
+    display: block;
+    width:150px;
+    height: 20px;
+    margin-top: 5px;
+    color:blue;
+    font-size:12px;
+    text-decoration: none;
+    text-align: left;
+
+} 
+nav li:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+audio{
+	width: 70px;
+	margin-top: 10px;
+}
+ 
+#totop{
+	width: 65px;
+	height: 65px;
+	/*display: none;*/
+	background: grey;
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	position: fixed;
+    right: 50px;
+    bottom: 100px;
+ 	cursor: pointer;
+}
+#totop p{
+	font-size: 12px;
+}

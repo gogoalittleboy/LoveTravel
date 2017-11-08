@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background: url(img/wallpaper.jpg);
+				background-size: cover;
+			}
+			.box{
+				width: 980px;
+				height: 370px;
+				background: white;
+				margin: 130px auto;
+				padding: 30px;
+				display:flex;
+			}
+			.box1{
+				flex: 1;
+				border-right: 1px solid grey;
+			}
+			.box2{
+				position: relative;
+				flex: 1;
+				margin-left: 40px;
+			}
+			.box1>span{
+				font-size: 18px;
+				font-weight: bold;
+				padding-bottom: 5px;
+				margin-bottom: 20px;
+				border-bottom: 5px solid green;
+			}
+			.box1 .he{
+				margin-top: 40px;
+			}
+			.box1 .he span{
+				font-size: 16px;
+			}
+			.box1 .he input{
+				width: 240px;
+				height: 30px;
+				padding-left: 5px;
+			}
+			.box1 input[id="submit"]{
+				cursor: pointer;
+				width: 100px;
+				height: 35px;
+				background: #82cb2d;
+				color: white;
+				line-height: 35px;
+				border: 1px solid green;
+				margin-left: 100px;
+				border: hidden;
+			}
+			.box2 h3{
+				width: 73px;
+				font-size: 18px;
+				font-weight: bold;
+				padding-bottom: 5px;
+				margin-bottom: 20px;
+				border-bottom: 5px solid green;
+			}
+			.pic1{
+				float: left;
+				width: 140px;
+				height: 40px;
+				margin-top: 10px;
+				border: 1px solid grey;
+				border-radius: 5px;
+				background: url(img/head.png) -303px -122px no-repeat;
+			}
+			.pic2{
+				float: left;
+				width: 170px;
+				height: 40px;
+				margin-top: 10px;
+				margin-left: 70px;
+				border: 1px solid grey;
+				border-radius: 5px;
+				background: url(img/head.png) -464px -122px no-repeat;
+			}
+			
+			.pic3{
+				float: left;
+				width: 140px;
+				height: 40px;
+				margin-top: 30px;
+				border: 1px solid grey;
+				border-radius: 5px;
+				background: url(img/head.png) -303px -178px no-repeat;
+			}
+			.pic4{
+				float: left;
+				width: 170px;
+				height: 40px;
+				margin-top: 30px;
+				margin-left: 70px;
+				border: 1px solid grey;
+				border-radius: 5px;
+				background: url(img/head.png) -464px -178px no-repeat;
+			}
+			.pic5{
+				float: left;
+				width: 140px;
+				height: 40px;
+				margin-top: 30px;
+				border: 1px solid grey;
+				border-radius: 5px;
+				background: url(img/head.png) -303px -234px no-repeat;
+			}
+			.box2 a:nth-last-child(1){
+				text-decoration: none;
+				position: absolute;
+				right: 80px;
+				bottom: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box1">
+				<span>普通注册</span>
+				<form action="#" method="post">
+					<div class="he">
+						<span>邮箱地址 : </span>
+						<input type="text" id="username"/>
+					</div>
+					<div class="he">
+						<span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码 : </span>
+						<input type="password" id="pwd"/></div>
+					<div class="he">
+						<span>确认密码 : </span>
+						<input type="password" id="pwd2"/></div>
+				</form>
+				<input type="submit" value="注 册" id="submit"/>
+				
+			</div>
+			
+			<div class="box2">
+				<h3>快速注册</h3>
+				<a href=""><div class="pic1"></div></a>
+				<a href=""><div class="pic2"></div></a>
+				<a href=""><div class="pic3"></div></a>
+				<a href=""><div class="pic4"></div></a>
+				<a href=""><div class="pic5"></div></a>
+				<a href="login.html">已有账号，现在去登陆！</a>
+			</div>
+			
+		</div>
+		
+		<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			 $("#submit").click(function () {
+		           if(checkuser()){
+		               if(checkpwd()){
+		                   if($("#pwd").val()==""||$("#username").val()==""){
+		                       alert("用户名或密码输入为空");
+		                   }else if($("#username").val()==window.localStorage.getItem("username")){
+		                       alert("该用户名已存在！");
+		                   } else{
+		                       if($("#pwd").val()==$("#pwd2").val()){
+		                           window.localStorage.setItem("username",$("#username").val());
+		                           window.localStorage.setItem("pwd",$("#pwd").val());
+		                           alert("注册成功！");
+		                           $(location).delay(1000).attr('href','login.html');
+		                       }else if($("#pwd").val()!=$("#pwd2").val()){
+		                           alert("密码不一致！请重新输入");
+		                       }
+		                   }
+		               }
+		           }
+		        })
+
+			function checkuser() {
+	            var user=$("#username").val();
+	            var reg=/^[a-zA-Z][a-zA-Z0-9]{3,15}$/;
+	            if(reg.test(user)==false){
+	                alert("用户名格式不正确！");
+	                return false;
+	            }
+	            return true;
+	        }
+	        function checkpwd(){
+	            var pwd=$("#pwd").val();
+	            var reg = /^[a-zA-Z0-9]{4,10}$/;
+	            if(reg.test(pwd)==false){
+	                alert("密码不能含有非法字符，长度在4-10之间");
+	                return false;
+	            }
+	            return true;
+	        }
+
+		</script>
+	</body>
+</html>
