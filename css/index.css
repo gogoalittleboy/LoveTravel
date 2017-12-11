@@ -22,13 +22,14 @@ ul{
 	list-style: none;
 }
 header{
-	width: 100%;
+	width: 1366px;
 	height: 35px;
 	background: black;
 	color: white;
 	padding: 2px;
 }
 header ul{
+	float: left;
 	margin-left: 230px;
 	/*margin-right: 535px;*/
 }
@@ -42,6 +43,7 @@ header ul li{
 	line-height: 35px;
 	font-size: 14px;
 }
+
 header .fenge{
 	float: left;
 	margin-left: 535px;
@@ -63,7 +65,7 @@ header .fenge img{
 }
 
 nav{
-	width: 100%;
+	width: 1366px;
 	height: 62px;
 	background: url(../img/bg.jpg);
 	/*background-size: 100%;*/
